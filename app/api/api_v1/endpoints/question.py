@@ -4,7 +4,7 @@ import logging
 from fastapi import APIRouter, HTTPException
 
 from question.question import Question
-from schemas.question import Requestquestion, Responsequestion
+from schemas.question import Requestquestion, Responsequestion, ResponseURL
 # from app.utils import PreProcessor, parsing_generation_output
 # from app.utils.decorators import live_mode, validate_content
 
@@ -22,6 +22,20 @@ async def request_question(req: Requestquestion) -> Responsequestion:
     try: 
         result = question.run(req.request)
         return Responsequestion(answer=result)
+    except Exception as e:
+        logger.error(f"Error processing request: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal Server Error")
+
+
+@router.post("/request", response_model = ResponseURL)
+async def request_URL(req: Requestquestion) -> ResponseURL:
+    """ 
+    Generate a response that includes a applyment URL from a question. \n
+    A question (string) is required in the request body. """
+
+    try: 
+        result = question.run2(req.request)
+        return ResponseURL(answer = result)
     except Exception as e:
         logger.error(f"Error processing request: {str(e)}")
         raise HTTPException(status_code=500, detail="Internal Server Error")

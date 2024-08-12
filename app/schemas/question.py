@@ -6,4 +6,7 @@ class Requestquestion(BaseModel):
     request : str
 
 class Responsequestion(BaseModel):
-    answer: str
+    answer : str
+
+class ResponseURL(BaseModel):
+    answer : str
