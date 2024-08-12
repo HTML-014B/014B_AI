@@ -1,0 +1,4 @@
+{"message": "Incoming request", "timestamp": "2024-08-12 15:27:45.963591", "req": {"method": "GET", "url": "http://127.0.0.1:8000/"}, "res": {"status_code": 200}}
+{"message": "Incoming request", "timestamp": "2024-08-12 15:27:46.011964", "req": {"method": "GET", "url": "http://127.0.0.1:8000/"}, "res": {"status_code": 200}}
+{"message": "Incoming request", "timestamp": "2024-08-12 15:27:49.051790", "req": {"method": "GET", "url": "http://127.0.0.1:8000/docs"}, "res": {"status_code": 200}}
+{"message": "Incoming request", "timestamp": "2024-08-12 15:27:49.336160", "req": {"method": "GET", "url": "http://127.0.0.1:8000/api/v1/openapi.json"}, "res": {"status_code": 200}}
