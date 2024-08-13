@@ -20,8 +20,8 @@ class Settings(BaseSettings):
     LANGCHAIN_API_KEY: str
     OPENAI_API_KEY: str
 
-    # AZURE_OPENAI_ENDPOINT: str
-    # AZURE_OPENAI_API_KEY: str
+    AZURE_OPENAI_ENDPOINT: str = "https://joonhyuk-lee.openai.azure.com/"
+    AZURE_OPENAI_API_KEY: str = "60546f6bfdeb463d894aae24754f45ff"
 
     class Config:
         env_file = ".env"

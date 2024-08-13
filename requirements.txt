@@ -2,7 +2,7 @@ fastapi==0.103.0
 uvicorn==0.23.2
 langchain==0.0.310
 python-dotenv==1.0.0
-openai
+openai==0.28.1 # Azure 사용시 버전 수정 필요
 pydantic-settings==2.0.3
 python-multipart==0.0.6
 azure-cosmos==4.5.0
