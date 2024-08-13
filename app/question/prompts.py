@@ -3,6 +3,10 @@ from langchain.prompts import PromptTemplate
 from core.config import settings
 
 # 프롬프트 템플릿 초기화
+
+# 영문 -> 한문 번역 -> 최종 답변 형식
+# 추후 수정 필요 -> 원문으로 바로 답변 받기
+
 question_prompt_template = PromptTemplate.from_template(
     """
     You are responsible for answering questions to help farmers to facilitate in growth of their vegetables
@@ -21,6 +25,7 @@ question_prompt_template = PromptTemplate.from_template(
     """
 )
 
+# 번역 프롬프트
 translation_prompt_template = PromptTemplate.from_template(
     """
     Translate the given sentences into Korean in a natural way, following the format.

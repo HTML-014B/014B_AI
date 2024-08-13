@@ -4,7 +4,7 @@ import logging
 from fastapi import APIRouter, HTTPException
 
 from question.question import Question
-from schemas.question import Requestquestion, Responsequestion, ResponseURL
+from schemas.question import Requestquestion, Responsequestion
 # from app.utils import PreProcessor, parsing_generation_output
 # from app.utils.decorators import live_mode, validate_content
 
@@ -12,6 +12,7 @@ router = APIRouter()
 question = Question()
 logger = logging.getLogger(__name__)
 
+# /request 경로로 POST 요청 보내기.
 @router.post("/request", response_model= Responsequestion)
 async def request_question(req: Requestquestion) -> Responsequestion:
     """
@@ -27,15 +28,16 @@ async def request_question(req: Requestquestion) -> Responsequestion:
         raise HTTPException(status_code=500, detail="Internal Server Error")
 
 
-@router.post("/request", response_model = ResponseURL)
-async def request_URL(req: Requestquestion) -> ResponseURL:
+# @router.post("/request", response_model = Responsequestion)
+#async def request_URL(req: Requestquestion) -> Responsequestion:
     """ 
     Generate a response that includes a applyment URL from a question. \n
-    A question (string) is required in the request body. """
+    A question (string) is required in the request body. 
+    """
 
-    try: 
-        result = question.run2(req.request)
-        return ResponseURL(answer = result)
-    except Exception as e:
-        logger.error(f"Error processing request: {str(e)}")
-        raise HTTPException(status_code=500, detail="Internal Server Error")
+#    try: 
+#        result = question.run2(req.request)
+#        return Responsequestion(answer = result)
+#    except Exception as e:
+#        logger.error(f"Error processing request: {str(e)}")
+#        raise HTTPException(status_code=500, detail="Internal Server Error")
