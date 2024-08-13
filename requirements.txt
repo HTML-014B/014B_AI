@@ -2,6 +2,8 @@ fastapi==0.103.0
 uvicorn==0.23.2
 langchain==0.0.310
 python-dotenv==1.0.0
-openai == 0.28.1
+openai
 pydantic-settings==2.0.3
 python-multipart==0.0.6
+azure-cosmos==4.5.0
+azure-identity==1.15.0
