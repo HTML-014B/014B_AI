@@ -1,7 +1,7 @@
 import os
 
 from langchain.chat_models import ChatOpenAI
-# from openai import AzureOpenAI > version 맟줘야함.
+# from openai import AzureOpenAI > 가장 최근 나온 버전으로 바꿀 것..
 from core.config import settings
 from question.prompts import prompt_templates
 
